@@ -1,0 +1,32 @@
+{
+  "name": "wholesale-price-automation",
+  "version": "1.0.0",
+  "description": "E2E automation for wholesale price testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "test:cucumber": "cypress run --spec 'cypress/e2e/**/*.feature'",
+    "test:headed": "cypress run --headed",
+    "test:open": "cypress open",
+    "test:chrome": "cypress run --browser chrome",
+    "test:smoke": "cypress run --spec 'cypress/e2e/smoke/**/*'",
+    "lint": "eslint cypress/",
+    "clean:reports": "rm -rf cypress/reports cypress/screenshots cypress/videos"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^13.6.0",
+    "cypress-mochawesome-reporter": "^3.7.0",
+    "esbuild": "^0.25.8",
+    "eslint": "^8.56.0",
+    "eslint-plugin-cypress": "^2.15.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/support/step_definitions/**/*.{js,ts}"
+    ],
+    "filterSpecs": true,
+    "omitFiltered": true
+  }
+}
