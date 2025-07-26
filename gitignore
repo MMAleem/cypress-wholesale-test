@@ -1,0 +1,13 @@
+# Ignore node modules
+node_modules/
+
+# Cypress output
+cypress/videos/
+cypress/screenshots/
+cypress/reports/
+
+# System files
+.DS_Store
+
+# Local environment files
+.env
